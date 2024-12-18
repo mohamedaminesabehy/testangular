@@ -1,0 +1,10 @@
+<p>list-albums-component works!</p>
+
+<div *ngFor="let album of archives" class="menu-card">
+    <h3>{{ album.title }}</h3>
+    <img [src]="album.coverPicture" alt="{{ album.coverPicture }}" />
+    <br>
+    <br>
+  </div>
+
+

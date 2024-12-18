@@ -1,0 +1,38 @@
+<p>add-album-component works!</p>
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div>
+      <label for="title"><h3>Titre</h3></label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        placeholder="title"
+        [(ngModel)]="album.title"
+        required
+        #title="ngModel"
+      />
+      <!-- Message d'erreur -->
+      <div *ngIf="title.invalid && title.touched" style="color: red;">
+        Le titre est obligatoire.
+      </div>
+    </div>
+  
+    <div>
+      <label for="coverPicture"><h3>Description</h3></label>
+      <input
+        type="text"
+        id="coverPicture"
+        name="coverPicture"
+        placeholder="coverPicture"
+        minlength="5"
+        [(ngModel)]="album.coverPicture"
+        #coverPicture="ngModel"
+      />
+        <div *ngIf="coverPicture.errors?.['minlength']" style="color: red;">
+          Le titre doit contenir au moins 5 caractères.
+        </div>
+    </div>
+  
+    <button type="submit" >Ajouter</button>
+  </form>
+  

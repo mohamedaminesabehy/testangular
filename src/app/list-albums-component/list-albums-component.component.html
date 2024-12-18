@@ -1,0 +1,9 @@
+<p>list-albums-component works!</p>
+<div *ngFor="let album of albums" class="menu-card">
+    <h3>{{ album.title }}</h3>
+    <img [src]="album.coverPicture" alt="{{ album.coverPicture }}" />
+    <br>
+    <button (click)="deleteAlbum()">Supprimer</button>
+    <br>
+  </div>
+
